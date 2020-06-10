@@ -1,0 +1,32 @@
+@h40: 40px;
+.login {
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .loginForm {
+        width: 500px;
+        height: 400px;
+        background-color: #fff;
+        h2 {
+            font-size: 28px;
+            font-weight: bold;
+            text-align: center;
+            margin: @h40 0px;
+        }
+        .login-form {
+            margin: 30px @h40;
+            .form-input {
+                height: @h40;
+            }
+            .login-form-button {
+                width: 100%;
+                height: @h40;
+                margin-top: 30px;
+            }
+        }
+       
+    }
+}

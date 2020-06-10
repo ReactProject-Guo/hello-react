@@ -1,0 +1,12 @@
+diff a/src/pages/Admin/Admin.jsx b/src/pages/Admin/Admin.jsx	(rejected hunks)
+@@ -31,8 +31,8 @@
+                 <Layout>
+                     {/* 父组件将值传递给子组件 */}
+                     <Header collapsed={collapsed} toggleCollapsed={this.toggleCollapsed} /> 
+-                    <Content style={{ backgroundColor:'#f00'}}>Hello Sourcetree</Content>
+-                    <Footer style={{ textAlign:'center',color:'#ccc' }}>推荐使用谷歌浏览器可以获得最佳的效果体验</Footer>
++                    <Content style={{ backgroundColor:'#f00'}}>Hello Sourcetreeaaaa</Content>
++                    <Footer style={{ textAlign:'center',color:'#ccc' }}>推荐获得最佳的效果体验</Footer>
+                 </Layout>
+             </Layout>
+         );

@@ -1,0 +1,44 @@
+@h_64: 64px;
+@c_fff: #fff;
+.ant-layout-sider {
+    background-color: #000;
+}
+.ant-menu-dark, .ant-menu-dark .ant-menu-sub {
+  background: #000 !important;
+}
+.left-nav {
+    width: 100%;
+    min-width: 50px;
+    .left-nav-header {
+        height: 64px;
+        min-width: 50px;
+        box-sizing: border-box;
+        overflow: hidden;
+        display: flex;
+        flex-direction: row;
+        line-height: 64px;
+        color: @c_fff;
+        .ant-avatar {
+            margin: 10px; 
+            min-width: 40px;
+        }
+        h1 {
+            color: @c_fff;
+            font-weight: 600;
+            font-size: 16px;
+            display: inline-block;
+        }
+    }
+}
+.ant-layout-sider-collapsed {
+  .left-nav {
+    .left-nav-header {
+      h1 {
+        display: none;
+      }
+      .ant-avatar {
+        margin: 10px auto;
+      }
+    }
+  }
+}
