@@ -140,6 +140,7 @@ class ProductIndex extends Component {
           loading={loading}
           rowKey='_id'
           pagination={{
+            current: this.pageNum,
             total: total,
             defaultCurrent: 1,
             defaultPageSize: PAGE_SIZE,

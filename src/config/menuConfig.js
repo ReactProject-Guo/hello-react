@@ -2,7 +2,8 @@ const menuList = [
   {
     title:'首页',
     key:'/home',
-    icon:'home'
+    icon:'home',
+    isPublic:true, // 公开的，不管什么用户都能看到该Itme
   },
   {
     title:'商品',
