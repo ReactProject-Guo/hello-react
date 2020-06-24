@@ -69,6 +69,13 @@ export const reqAddRole = (roleName)=> ajax(`${baseApi}/manage/role/add`,{roleNa
 // 更新角色
 export const reqUpdateRole = (role)=> ajax(`${baseApi}/manage/role/update`,role,'POST');
 
+// 获取用户列表
+export const reqUsers = () => ajax(`${baseApi}/manage/user/list`);
+// 删除指定的用户
+export const reqDeleteUsers = (userId) => ajax(`${baseApi}/manage/user/delete`,{userId},'POST');
+
+// 添加/更新用户
+export const reqAddOrUpdateUsers = (user) => ajax(`${baseApi}/manage/user/${user._id?'update':'add'}`,user,'POST');
 
 
 

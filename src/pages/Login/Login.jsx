@@ -37,7 +37,7 @@ class Login extends Component {
         //   console.log('请求出错',error);
         // }
         const response = await reqLogin({ username,password });
-        console.log('请求成功',response);
+        // console.log('请求成功',response);
         
         this.enterLoading();
         if(response.status === 0) {
@@ -47,6 +47,9 @@ class Login extends Component {
           // this.props.history.push('/'); 使用push的话，路由可以回退 
           this.props.history.replace('/'); // 路由不可以回退，不用记录路由历史
         } else {
+          this.setState({
+            loading:false
+          })
           message.error(response.msg)
         }
       } else {
@@ -133,7 +136,7 @@ class Login extends Component {
               name="submit-btn"
               className="submitBtn"
             >
-              <Button type="primary" htmlType="submit"      className="login-form-button"
+              <Button type="primary" htmlType="submit" className="login-form-button"
               loading={this.state.loading}>
                 登录
               </Button>

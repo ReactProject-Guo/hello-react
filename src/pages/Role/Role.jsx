@@ -124,20 +124,27 @@ class Role extends Component {
         this.props.history.push('/login');
         message.success('当前用户角色权限设置成功！');        
       } else {
-        message.success('设置角色权限成功！');
+       
         /**
          * 下面的代码是更新本地的数据
          * 疑问：为什么上面更改的是role,但是roleList数据会发生变化呢？
          * 因为role是roleList的一个引用变量,是roleList其中的一个，当role更改的时候，this.state.roleList的值也会更改
          */
-        this.setState({
-          roleList:[...this.state.roleList]
-        })
+        // 如果当前更新的是自己角色的权限，强制退出
+        if(userinfo.role_id === role._id) {
+          // userinfo = {};          
+          React.$storage_utils.removeUser();
+          this.props.history.replace('/login');
+          message.success('当前用户角色权限修改，请重新登录！');
+        } else {
+          message.success('设置角色权限成功！');
+          this.setState({
+            roleList:[...this.state.roleList]
+          })
+        }
       }
      
     }
-
-    // console.log('xxx',role)
   }
   /**
  * 此时Dom还未渲染
