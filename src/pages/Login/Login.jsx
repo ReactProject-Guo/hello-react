@@ -5,6 +5,10 @@ import { Form, Input, Button,message,notification} from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
 import { reqLogin } from './../../api'
 import storageUtils from './../../utils/storageUtils';
+import {connect} from 'react-redux'
+import {loginFunc} from './../../redux/action'
+
+
 const Item = Form.Item; // 注意const不能写在import之前
 
 class Login extends Component {
@@ -36,9 +40,10 @@ class Login extends Component {
         // } catch(error) {
         //   console.log('请求出错',error);
         // }
-        const response = await reqLogin({ username,password });
-        // console.log('请求成功',response);
         
+
+        // 不使用 redux 版本的 代码
+        const response = await reqLogin({ username,password });
         this.enterLoading();
         if(response.status === 0) {
           message.success('登录成功！');
@@ -52,6 +57,11 @@ class Login extends Component {
           })
           message.error(response.msg)
         }
+        
+        // 使用 redux 版本的代码 
+        // this.props.loginFunc(username,password);
+      //  console.log('登录',);    
+        
       } else {
         console.log('检验失败!')
       }
@@ -166,4 +176,11 @@ class Login extends Component {
  * 新组件会向Form组件传递一个强大的对象属性：form
  */
 const WrapLogin = Form.create()(Login);
-export default WrapLogin;
+// export default WrapLogin;
+
+// 将使用了 redux 的 UI 包装成容器组件
+
+export default connect(
+  state => ({userinfo:state.userinfo}),
+  {loginFunc}
+)(WrapLogin);

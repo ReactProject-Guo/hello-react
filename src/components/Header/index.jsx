@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Icon } from 'antd';
 import PropTypes from 'prop-types';
 import DropDown from './DropDown';
+import {connect} from 'react-redux';
+
 import './../../assets/css/header.less';
 import moment from 'moment';
 class Header extends Component {
@@ -53,7 +55,7 @@ class Header extends Component {
     clearInterval(this.timer);
   }
   render() {
-    const { collapsed,loginOut } = this.props;
+    const { collapsed,loginOut,headetitle } = this.props;
     let user = JSON.parse(React.$storage_utils.getUser());
     // let currentTime = moment().format('YYYY-MM-DD HH:mm:ss');
     // console.log()
@@ -62,6 +64,7 @@ class Header extends Component {
         <div className="toggle-btn" onClick={this.toggleCollapsed}>
           <Icon type={collapsed ? 'menu-unfold' : 'menu-fold'} />
         </div>
+        <div className="centerText">{headetitle}</div>
         <div className="header-info">
           <div className="welcome"><p>{this.state.currentTime}</p> 欢迎<span>{user.username}</span></div>
           <DropDown loginOut={loginOut} />
@@ -72,4 +75,10 @@ class Header extends Component {
 }
 
 // export default Header;
-export default React.memo(Header);
+// export default React.memo(Header);
+
+// 将UI组件包装成函数组件
+export default connect(
+  state => ({headetitle:state.headetitle}),
+  {}
+)(React.memo(Header));
