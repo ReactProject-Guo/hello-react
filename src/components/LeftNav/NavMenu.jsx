@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import { Menu, Icon } from 'antd';
 import { Link, withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import {connect} from 'react-redux';
+import {setHeadTitle} from './../../redux/action';
+
 const { SubMenu } = Menu;
 
 class NavMenu extends Component {
@@ -81,7 +84,7 @@ class NavMenu extends Component {
         if (!item.children) {
           return (
             <Menu.Item key={item.key}>
-              <Link to={item.key}><Icon type={item.icon} /><span>{item.title}</span></Link>
+              <Link to={item.key} onClick={() => { this.props.setHeadTitle(item.title) } }><Icon type={item.icon} /><span>{item.title}</span></Link>
             </Menu.Item>
           )
         } else {
@@ -198,4 +201,8 @@ class NavMenu extends Component {
  */
 
 // export default NavMenu;
-export default withRouter(NavMenu);
+// export default withRouter(NavMenu);
+export default connect(
+  state => ({}),
+  {setHeadTitle}
+)(withRouter(NavMenu));

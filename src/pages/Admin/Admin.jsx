@@ -12,6 +12,8 @@ import User from './../User/User';
 import Bar from './../Graph/Bar';
 import Line from './../Graph/Line';
 import PieChart from './../Graph/PieChart';
+import NotFound from './../NotFound'
+
 import './../../assets/css/admin.less'
 
 const { Footer, Sider, Content } = Layout;
@@ -56,6 +58,8 @@ class Admin extends Component {
           <Header collapsed={collapsed} toggleCollapsed={this.toggleCollapsed} loginOut={this.loginOut} />
           <Content>
             <Switch>
+              {/* 完全匹配(精确匹配) */}
+              <Redirect exact={true} from='/' to='/home' />
               <Route path="/pro/category" component={Category} />
               <Route path="/pro/product" component={Product} />
               <Route path="/role" component={Role} />
@@ -64,7 +68,7 @@ class Admin extends Component {
               <Route path="/graph/line" component={Line} />
               <Route path="/graph/pie" component={PieChart} />
               <Route path="/home" component={Home} />
-              <Redirect to="/home" />
+              <Route component={NotFound} />
             </Switch>
           </Content>
           <Footer style={{ textAlign: 'center', color: '#ccc' }}>推荐获得最佳的效果体验</Footer>
