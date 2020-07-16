@@ -14,7 +14,7 @@ class LeftNav extends Component {
   render() {
     return (
       <div className="left-nav">
-        <div className="left-nav-header">
+        <div className="left-nav-header" id="navAside">
           <Avatar src={logoImg} size="large" />
           <h1>后台管理系统</h1>
         </div>

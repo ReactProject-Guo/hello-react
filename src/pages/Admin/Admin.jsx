@@ -13,6 +13,9 @@ import Bar from './../Graph/Bar';
 import Line from './../Graph/Line';
 import PieChart from './../Graph/PieChart';
 import NotFound from './../NotFound'
+import Guide from './../Guide';
+import Excel from './../Excel';
+import Com from './../Componment';
 
 import './../../assets/css/admin.less'
 
@@ -68,6 +71,9 @@ class Admin extends Component {
               <Route path="/graph/line" component={Line} />
               <Route path="/graph/pie" component={PieChart} />
               <Route path="/home" component={Home} />
+              <Route path="/guide" component={Guide} />
+              <Route path="/excel" component={Excel} />
+              <Route path="/com" component={Com} />                      
               <Route component={NotFound} />
             </Switch>
           </Content>

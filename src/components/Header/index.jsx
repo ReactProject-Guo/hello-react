@@ -61,13 +61,18 @@ class Header extends Component {
     // console.log()
     return (
       <div className="navHeader">
-        <div className="toggle-btn" onClick={this.toggleCollapsed}>
+        <div className="toggle-btn" onClick={this.toggleCollapsed} id="collapseBtn">
           <Icon type={collapsed ? 'menu-unfold' : 'menu-fold'} />
         </div>
         <div className="centerText">{headetitle}</div>
         <div className="header-info">
-          <div className="welcome"><p>{this.state.currentTime}</p> 欢迎<span>{user.username}</span></div>
-          <DropDown loginOut={loginOut} />
+          <div className="welcome">
+            <p id="currentTime">{this.state.currentTime}</p> 
+            欢迎<span>{user.username}</span>
+          </div>
+          <div id="usercenter">
+            <DropDown loginOut={loginOut} />
+          </div>
         </div>
       </div>
     );
