@@ -43,6 +43,48 @@ const menuList = [
       key:'/graph/pie',
       icon:'pie-chart',
     }]
+  },{
+    title:'Excel',
+    key:'/excel',
+    icon:'file-excel',
+    children:[{
+      title:'Excel导入',
+      key:'/excel/in',
+      icon:'file-excel',
+    },{
+      title:'Excel导出',
+      key:'/excel/out',
+      icon:'file-excel',
+    },{
+      title:'多级表头导出',
+      key:'/excel/mulitout',
+      icon:'file-excel',
+    }]
+  },{
+    title:'常用组件',
+    key:'/com',
+    icon:'code',
+    children:[{
+      title:'安全校验',
+      key:'/com/security',
+      icon:'security-scan',
+    },{
+      title:'手写轮播',
+      key:'/com/slider',
+      icon:'sliders',
+    },{
+      title:'上传图片',
+      key:'/com/upload-img',
+      icon:'cloud-upload',
+    }]
+  },{
+    title:'项目代码地址',
+    key:'/code',
+    icon:'line-chart',
+  },{
+    title:'引导指南',
+    key:'/guide',
+    icon:'notification',
   }
 ];
 export default menuList;
