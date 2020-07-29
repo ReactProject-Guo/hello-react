@@ -76,6 +76,10 @@ const menuList = [
       title:'上传图片',
       key:'/com/upload-img',
       icon:'cloud-upload',
+    },{
+      title:'放大镜效果',
+      key:'/com/magnifier',
+      icon:'cloud-upload',
     }]
   },{
     title:'项目代码地址',
