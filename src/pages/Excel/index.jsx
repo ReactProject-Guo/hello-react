@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { Route,Switch,Redirect } from 'react-router-dom';
-import ExcelIn from './ExcelIn';
-import ExcelOut from './ExcelOut';
-import ExcelMulit from './ExcelMulit'
+import ExcelInOut from './ExcelInOut';
 class Index extends Component {
   constructor(props) {
     super(props);
@@ -11,10 +9,8 @@ class Index extends Component {
   render() { 
     return (
       <Switch>
-        <Route path="/excel/in" component={ExcelIn} />
-        <Route path="/excel/out" component={ExcelOut} />  
-        <Route path="/excel/mulitout" component={ExcelMulit} /> 
-        <Redirect to="/excel/in" />       
+        <Route path="/excel/inOrOut" component={ExcelInOut} />  
+        <Redirect to="/excel/inOrOut" />       
       </Switch>
     );
   }

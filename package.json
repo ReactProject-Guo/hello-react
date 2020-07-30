@@ -2,6 +2,7 @@
   "name": "hello-react",
   "version": "0.1.0",
   "private": true,
+  "homepage":"https://github.com/ReactProject-Guo/hello-react",
   "dependencies": {
     "@ant-design/icons": "^4.1.0",
     "@babel/core": "7.9.0",
@@ -82,7 +83,8 @@
     "webpack": "4.42.0",
     "webpack-dev-server": "3.10.3",
     "webpack-manifest-plugin": "2.2.0",
-    "workbox-webpack-plugin": "4.3.1"
+    "workbox-webpack-plugin": "4.3.1",
+    "xlsx": "^0.16.4"
   },
   "scripts": {
     "start": "react-app-rewired start",

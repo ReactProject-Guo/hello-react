@@ -44,6 +44,7 @@ class Category extends Component {
 
     parentId = parentId || this.state.parentId;
     const res = await reqCategorys(parentId);
+    console.log('品类列表数据',res);
     this.setState({ loading: false });
     if (res.status === 0) {
       const categorys = res.data;
