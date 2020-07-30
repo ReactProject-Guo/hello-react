@@ -4,6 +4,8 @@
  */
 import ajax from './ajax';
 // const baseApi = 'http://rap2.taobao.org:38080/app/mock/253236';
+// fast mock
+const fastMock = 'https://www.fastmock.site/mock/7b3b73f75c787dbfe28bf649db17ed5e/api'
 const baseApi = 'http://39.100.225.255:5000';
 const weatherApi = `http://wthrcdn.etouch.cn/weather_mini?city=北京`; 
 // 登录
@@ -13,7 +15,7 @@ const weatherApi = `http://wthrcdn.etouch.cn/weather_mini?city=北京`;
     }
  */
 
-export const reqLogin = ({username,password}) => ajax(`${baseApi}/login`,{username,password},'POST');
+// export const reqLogin = ({username,password}) => ajax(`${baseApi}/login`,{username,password},'POST');
 
 // 添加用户
 export const reqAddUser = user=> ajax('/manage/user/add',user,'POST');
@@ -23,11 +25,11 @@ export const reqAddUser = user=> ajax('/manage/user/add',user,'POST');
 export const reqWeather = () => ajax(weatherApi);
 
 // 获取品类列表
-export const reqCategorys = parentId => ajax(`${baseApi}/manage/category/list`,{parentId});
+// export const reqCategorys = parentId => ajax(`${baseApi}/manage/category/list`,{parentId});
 // 添加分类
 export const reqAddCategory = ({categoryName, parentId}) => ajax(`${baseApi}/manage/category/add`,{parentId,categoryName},'POST');
 // 更新分类
-export const reqUpdateCategory = ({categoryId,categoryName}) => ajax(`${baseApi}/manage/category/update`,{categoryId,categoryName},'POST');
+// export const reqUpdateCategory = ({categoryId,categoryName}) => ajax(`${baseApi}/manage/category/update`,{categoryId,categoryName},'POST');
 
 // 获取商品分页列表
 export const reqProducts = ({pageNum, pageSize}) => ajax(`${baseApi}/manage/product/list`, {pageNum, pageSize});
@@ -78,6 +80,15 @@ export const reqDeleteUsers = (userId) => ajax(`${baseApi}/manage/user/delete`,{
 export const reqAddOrUpdateUsers = (user) => ajax(`${baseApi}/manage/user/${user._id?'update':'add'}`,user,'POST');
 
 
+
+// fast Mock 
+// 用户登录
+export const reqLogin = ({username,password}) => ajax(`${fastMock}/login`,{username,password},'POST');
+
+// 获取品类列表
+export const reqCategorys = parentId => ajax(`${fastMock}/category/list`,{parentId});
+// 更新分类
+export const reqUpdateCategory = ({categoryId,categoryName}) => ajax(`${fastMock}/category/update`,{categoryId,categoryName},'POST');
 
 
 

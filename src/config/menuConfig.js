@@ -48,16 +48,8 @@ const menuList = [
     key:'/excel',
     icon:'file-excel',
     children:[{
-      title:'Excel导入',
-      key:'/excel/in',
-      icon:'file-excel',
-    },{
-      title:'Excel导出',
-      key:'/excel/out',
-      icon:'file-excel',
-    },{
-      title:'多级表头导出',
-      key:'/excel/mulitout',
+      title:'Excel导入导出',
+      key:'/excel/inOrOut',
       icon:'file-excel',
     }]
   },{

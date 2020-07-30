@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import PropType from 'prop-types';
+// import PropType from 'prop-types';
 
 import sliderImg1 from './img/wf1.jpg';
 import sliderImg2 from './img/wf2.jpg';
@@ -36,7 +36,7 @@ class Slider extends Component {
 
         let sliderWidth = slider.offsetWidth;
         let ul = slider.children[0]
-        let ol = slider.children[1];
+        // let ol = slider.children[1];
 
         let arrow = sliderBox.children[1];
         let preBtn = arrow.children[0];    
@@ -175,11 +175,11 @@ class Slider extends Component {
                 <div className="slider-container" ref="sliderBox" onMouseEnter={() => {this.mouseEnter()}} onMouseLeave={() => {this.mouseeave()}}>
                     <div className="slider">
                         <ul>
-                            <li><img src={sliderImg1} /></li>
-                            <li><img src={sliderImg2} /></li>
-                            <li><img src={sliderImg3} /></li>
-                            <li><img src={sliderImg4} /></li>
-                            <li><img src={sliderImg5} /></li> 
+                            <li><img src={sliderImg1} alt="" /></li>
+                            <li><img src={sliderImg2} alt="" /></li>
+                            <li><img src={sliderImg3} alt="" /></li>
+                            <li><img src={sliderImg4} alt="" /></li>
+                            <li><img src={sliderImg5} alt="" /></li> 
                         </ul>    
                         {/* <slot name="slider"></slot> */}
                         {/* <ol dangerouslySetInnerHTML={{__html:serialNum}}></ol> */}

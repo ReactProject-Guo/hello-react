@@ -8,7 +8,7 @@ class NotFound extends Component {
   render() { 
     return (
       <div className="notFoundPage">
-        <img src={notFound}  />
+        <img src={notFound} alt="NotFound" />
         <Link to='/' >
           <Button className="toIndex" type="primary" >回到首页</Button>
         </Link>
