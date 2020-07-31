@@ -6,6 +6,7 @@ import React, { Component } from 'react';
 import {BrowserRouter,Route,Switch} from 'react-router-dom';
 import Admin from './pages/Admin/Admin';
 import Login from './pages/Login/Login';
+
  class App extends Component {
      render() { 
          return (
