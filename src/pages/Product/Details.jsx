@@ -25,7 +25,7 @@ class ProductDetail extends Component {
       const res = await Promise.all([reqCategory(pCategoryId),reqCategory(categoryId)]) 
       const cName1 = res[0].data.name;
       const cName2 = res[1].data.name;      
-      this.setState({cName1,cName2});      
+      this.setState({cName1,cName2});
     }
   }
 

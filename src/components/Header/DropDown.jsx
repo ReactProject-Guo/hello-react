@@ -6,9 +6,9 @@ class DropDown extends Component {
   menu = () => {
     return (
       <Menu>
-        <Menu.Item key="1"><Icon type="user" /><span>用户设置</span></Menu.Item>
-        <Menu.Item key="2"><Icon type="setting" />系统设置</Menu.Item>
-        <Menu.Item key="3"><span onClick={this.props.loginOut}><Icon type="logout" />退出登录</span></Menu.Item>
+        <Menu.Item key="1"><Icon type="user" /><span>{React.$intl.get('dropdown_user')}</span></Menu.Item>
+        <Menu.Item key="2"><Icon type="setting" />{React.$intl.get('dropdown_sys')}</Menu.Item>
+        <Menu.Item key="3"><span onClick={this.props.loginOut}><Icon type="logout" />{React.$intl.get('dropdown_logiout')}</span></Menu.Item>
       </Menu>
     )
   }
@@ -19,7 +19,7 @@ class DropDown extends Component {
       <div>
         <Dropdown overlay={this.menu.bind(this)}>
           <span className="ant-dropdown-link" href="#" onClick={e => e.preventDefault()}>
-            个人中心
+            {React.$intl.get('personal_center')}
           </span>
         </Dropdown>
       </div>

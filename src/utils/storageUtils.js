@@ -1,6 +1,6 @@
 import store from 'store';
 const LOCAL_USER = "local_user";
-
+const LOCAL_LANG = "local_lang";
 /**
  * https://github.com/marcuswestin/store.js
  */
@@ -21,5 +21,18 @@ export default {
   },
   removeUser() {
     store.remove(LOCAL_USER);
+  },
+
+  setLang(lang) {
+    store.set(LOCAL_LANG,lang);
+    window.location.reload(true);
+  },
+  getLang() {
+    return store.get(LOCAL_LANG) || '';
+  },
+  removeLang() {
+    store.remove(LOCAL_LANG);
+    window.location.reload(true);
   }
+
 }

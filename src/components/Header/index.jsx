@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Icon } from 'antd';
 import PropTypes from 'prop-types';
 import DropDown from './DropDown';
+import ChangeLang from './ChangeLang';
 import {connect} from 'react-redux';
 
 import './../../assets/css/header.less';
@@ -72,6 +73,9 @@ class Header extends Component {
           </div>
           <div id="usercenter">
             <DropDown loginOut={loginOut} />
+          </div>
+          <div className="lang">
+            <ChangeLang />
           </div>
         </div>
       </div>
