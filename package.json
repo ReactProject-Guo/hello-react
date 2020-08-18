@@ -2,7 +2,7 @@
   "name": "hello-react",
   "version": "0.1.0",
   "private": true,
-  "homepage": "/hello-react",
+  "homepage": "https://reactproject-guo.github.io/hello-react/",
   "dependencies": {
     "@ant-design/icons": "^4.1.0",
     "@babel/core": "7.9.0",
@@ -67,6 +67,7 @@
     "react-dev-utils": "^10.2.1",
     "react-dom": "^16.13.1",
     "react-draft-wysiwyg": "^1.14.5",
+    "react-intl-universal": "^2.3.2",
     "react-redux": "^7.2.0",
     "react-router-dom": "^5.1.2",
     "react-scripts": "^3.4.1",
@@ -90,7 +91,9 @@
   "scripts": {
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
-    "test": "react-app-rewired test"
+    "test": "react-app-rewired test",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -161,6 +164,7 @@
     ]
   },
   "devDependencies": {
+    "gh-pages": "^3.1.0",
     "redux-devtools-extension": "^2.13.8"
   }
 }

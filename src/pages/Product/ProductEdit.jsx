@@ -64,6 +64,7 @@ class ProductEdit extends Component {
         if(this.isUpdate) {
           product._id = this.product._id;
         }
+        
         // 2、调用接口请求函数去添加/更新
         const res = await reqAddOrUpdateProduct(product);
         // 3、根据状态进行提示
@@ -148,7 +149,7 @@ class ProductEdit extends Component {
       // 找到当前对应的一级Option对象
       const targetOption = options.find(option => option.value === pCategoryId);
       // 将二级下拉列表的option关联到一级分类的 option 上
-      targetOption.children = childOption;
+    //   targetOption.children = childOption;
     }
 
     this.setState({ options });

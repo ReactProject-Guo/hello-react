@@ -32,25 +32,25 @@ export const reqAddCategory = ({categoryName, parentId}) => ajax(`${baseApi}/man
 // export const reqUpdateCategory = ({categoryId,categoryName}) => ajax(`${baseApi}/manage/category/update`,{categoryId,categoryName},'POST');
 
 // 获取商品分页列表
-export const reqProducts = ({pageNum, pageSize}) => ajax(`${baseApi}/manage/product/list`, {pageNum, pageSize});
+// export const reqProducts = ({pageNum, pageSize}) => ajax(`${baseApi}/manage/product/list`, {pageNum, pageSize});
 
 /**
  * 搜索获取商品分页列表
  * 如何让变量的值作为属性名
  *  - 给变量添加[]
 */
-export const reqSearchProducts = ({pageNum, pageSize,searchName,searchType}) => ajax(`${baseApi}/manage/product/search`, {pageNum, pageSize,[searchType]:searchName});
+// export const reqSearchProducts = ({pageNum, pageSize,searchName,searchType}) => ajax(`${baseApi}/manage/product/search`, {pageNum, pageSize,[searchType]:searchName});
 
 /**
  * 根据分类ID获取分类名称
  */
-export const reqCategory = (categoryId) => ajax(`${baseApi}/manage/category/info`,{categoryId});
+// export const reqCategory = (categoryId) => ajax(`${baseApi}/manage/category/info`,{categoryId});
 
 /*
  * 更新商品的状态(上架/下架)
  *  status: 1 / 2 (1:在售  2:下架) 
  */ 
-export const reqUpdateStatus = (productId, status) => ajax(`${baseApi}/manage/product/updateStatus`, {productId, status}, 'POST');
+// export const reqUpdateStatus = (productId, status) => ajax(`${baseApi}/manage/product/updateStatus`, {productId, status}, 'POST');
 
 /**
  * 删除图片
@@ -58,7 +58,7 @@ export const reqUpdateStatus = (productId, status) => ajax(`${baseApi}/manage/pr
 
 export const reqDeleteImg = (name) => ajax(`${baseApi}/manage/img/delete`,{name},'POST');
 // 添加/修改商品
-export const reqAddOrUpdateProduct = (product) => ajax(`${baseApi}/manage/product/${product._id?'update':'add'}`, product, 'POST');
+// export const reqAddOrUpdateProduct = (product) => ajax(`${baseApi}/manage/product/${product._id?'update':'add'}`, product, 'POST');
 // 修改商品
 // export const reqUpdateProduct = (product) => ajax(BASE + '/manage/product/update', product, 'POST');
 
@@ -89,6 +89,27 @@ export const reqLogin = ({username,password}) => ajax(`${fastMock}/login`,{usern
 export const reqCategorys = parentId => ajax(`${fastMock}/category/list`,{parentId});
 // 更新分类
 export const reqUpdateCategory = ({categoryId,categoryName}) => ajax(`${fastMock}/category/update`,{categoryId,categoryName},'POST');
+// 获取商品分页列表
+export const reqProducts = ({pageNum, pageSize}) => ajax(`${fastMock}/product/list`, {pageNum, pageSize});
 
 
+/**
+ * 根据分类ID获取分类名称
+ */
+export const reqCategory = (categoryId) => ajax(`${fastMock}/category/info`,{categoryId});
 
+// 添加/修改商品
+export const reqAddOrUpdateProduct = (product) => ajax(`${fastMock}/product/${product._id?'update':'add'}`, product, 'POST');
+
+/*
+ * 更新商品的状态(上架/下架)
+ *  status: 1 / 2 (1:在售  2:下架) 
+ */ 
+export const reqUpdateStatus = (productId, status) => ajax(`${fastMock}/product/updateStatus`, {productId, status}, 'POST');
+
+/**
+ * 搜索获取商品分页列表
+ * 如何让变量的值作为属性名
+ *  - 给变量添加[]
+*/
+export const reqSearchProducts = ({pageNum, pageSize,searchName,searchType}) => ajax(`${fastMock}/product/search`, {pageNum, pageSize,[searchType]:searchName});

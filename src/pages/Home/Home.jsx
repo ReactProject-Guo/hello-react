@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 class Home extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {  }
-  }
+
   render() { 
+    
     return (
-      <div className="main-container">首页</div>
+      <div className="main-container">
+        首页
+        {React.$intl.get('hello')}
+      </div>
     );
   }
 }

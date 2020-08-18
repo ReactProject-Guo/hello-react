@@ -16,7 +16,7 @@ class LeftNav extends Component {
       <div className="left-nav">
         <div className="left-nav-header" id="navAside">
           <Avatar src={logoImg} size="large" />
-          <h1>后台管理系统</h1>
+          <h1>{React.$intl.get('admin_manager')}</h1>
         </div>
         <div className="left-nav-menu">
           <NavMenu menuList={menuList} collapsed={this.props.collapsed} />

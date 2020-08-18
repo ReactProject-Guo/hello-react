@@ -70,8 +70,6 @@ class ProductIndex extends Component {
     } else {
       res = await reqProducts({ pageSize: PAGE_SIZE, pageNum });
     }
-    console.log(res);
-
     this.setState({ loading: false });
     if (res.status === 0) {
       const { total, list } = res.data;

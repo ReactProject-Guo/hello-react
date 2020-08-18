@@ -1,84 +1,89 @@
+import intl from 'react-intl-universal';
+import storageUtil from './../utils/storageUtils';
+let local_lang = storageUtil.getLang('local_lang') || 'zh-cn';
+
+const lang = require('./locales/'+local_lang+'.json');
 const menuList = [
   {
-    title:'首页',
+    title:  lang.menu_index,
     key:'/home',
     icon:'home',
     isPublic:true, // 公开的，不管什么用户都能看到该Itme
   },
   {
-    title:'商品',
+    title: lang.menu_product,
     key:'/pro',
     icon:'appstore',
     children:[{
-      title:'品类管理',
+      title: lang.menu_product_category,
       key:'/pro/category',
       icon:'unordered-list',
     },{
-      title:'商品管理',
+      title: lang.menu_product_pro,
       key:'/pro/product',
       icon:'appstore',
     }]
   },{
-    title:'角色管理',
+    title: lang.menu_role,
     key:'/role',
     icon:'user'
   },{
-    title:'用户管理',
+    title: lang.menu_user,
     key:'/user',
     icon:'user'
   },{
-    title:'图形图标',
+    title: lang.menu_graph,
     key:'/graph',
     icon:'line-chart',
     children:[{
-      title:'柱状图',
+      title: lang.menu_graph_bar,
       key:'/graph/bar',
       icon:'bar-chart',
     },{
-      title:'折线图',
+      title: lang.menu_graph_line,
       key:'/graph/line',
       icon:'stock',
     },{
-      title:'饼图',
+      title: lang.menu_graph_pie,
       key:'/graph/pie',
       icon:'pie-chart',
     }]
   },{
-    title:'Excel',
+    title: lang.menu_excel,
     key:'/excel',
     icon:'file-excel',
     children:[{
-      title:'Excel导入导出',
+      title: lang.menu_excel_in_out,
       key:'/excel/inOrOut',
       icon:'file-excel',
     }]
   },{
-    title:'常用组件',
+    title: lang.menu_com,
     key:'/com',
     icon:'code',
     children:[{
-      title:'安全校验',
+      title: lang.menu_com_security,
       key:'/com/security',
       icon:'security-scan',
     },{
-      title:'手写轮播',
+      title: lang.menu_com_slider,
       key:'/com/slider',
       icon:'sliders',
     },{
-      title:'上传图片',
-      key:'/com/upload-img',
+      title: lang.menu_com_upload,
+      key:'/com/user-intl',
       icon:'cloud-upload',
     },{
-      title:'放大镜效果',
+      title: lang.menu_com_magnifier,
       key:'/com/magnifier',
       icon:'cloud-upload',
     }]
   },{
-    title:'项目代码地址',
+    title: lang.menu_code,
     key:'/code',
     icon:'line-chart',
   },{
-    title:'引导指南',
+    title: lang.menu_guide,
     key:'/guide',
     icon:'notification',
   }
