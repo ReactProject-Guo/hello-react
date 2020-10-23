@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import DropDown from './DropDown';
 import ChangeLang from './ChangeLang';
 import {connect} from 'react-redux';
+import {SwitchTheme} from './SwitchTheme'
 
 import './../../assets/css/header.less';
 import moment from 'moment';
@@ -76,6 +77,9 @@ class Header extends Component {
           </div>
           <div className="lang">
             <ChangeLang />
+          </div>
+          <div className="switch-theme">
+            <SwitchTheme />
           </div>
         </div>
       </div>
