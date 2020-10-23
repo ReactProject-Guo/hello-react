@@ -2,10 +2,12 @@
 
 .navHeader {
     height: 64px;
-    background-color: @bg_fff;
+    background-color: var(--sider-bg);
     color: #000;
     padding: 0px @p_20;
     line-height: 64px;
+    box-shadow: 1px 7px 4px rgba(0,0,0,.1);
+    margin: 0px 0px 0px 1px;
     @d_fr_b();
     .toggle-btn {
       cursor: pointer;
@@ -13,6 +15,9 @@
         font-size: 26px;
         color: @f_c;
       }
+    }
+    .centerText {
+        color: var(--main-f-color);                          
     }
     .header-info {
       @d_fr_b();
@@ -23,6 +28,7 @@
         font-size: @f_m_14;
         margin-right: 10px;
         cursor: default;
+        color: var(--main-f-color);                  
         span {
           color: #2DAC91;
           display: inline-block;
@@ -34,8 +40,11 @@
         }
       }
       .ant-dropdown-link {
-        color: #000;
+        color: var(--main-f-color);
         cursor: pointer;
       }
+    }
+    .ant-switch {
+        background-color: var(--switch-theme);
     }
 }
